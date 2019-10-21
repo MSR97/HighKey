@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    
+    <data>
+        <variable
+            name="clickHandlers"
+            type="mohammadsajjad.magikey.view.MainFragment.MainFragmentClickHandlers"/>
+        
+    </data>
+    
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MainActivity"
+    android:orientation="vertical"
+    android:background="@color/app_yellow">
+    <LinearLayout
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_marginTop="20dp">
+
+        <ImageButton
+            android:onClick="@{clickHandlers::onStartGetAllFrag}"
+            android:background="@drawable/get_all_data"
+            android:id="@+id/getjson"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:text="دریافت کل اطلاعات از سرور" />
+
+
+
+        <ImageButton
+            android:background="@drawable/search_data"
+            android:id="@+id/button_Tosearch_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:text="جست و جوی کلید واژه از سرور"
+            android:onClick="@{clickHandlers::onStartSearchFragment}"/>
+
+
+        <ImageButton
+            android:background="@drawable/note_data"
+            android:id="@+id/notebook"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:text="دفترچه یادداشت"
+            android:layout_marginBottom="50dp"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/exit"
+            android:layout_marginBottom="20dp"
+            />
+    </LinearLayout>
+</LinearLayout>
+</layout>
