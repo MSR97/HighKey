@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#0518CC</color>
-    <color name="colorPrimaryDark">#3F51B5</color>
+    <color name="colorPrimary">#FF9100</color>
+    <color name="colorPrimaryDark">#DB7F05</color>
     <color name="colorAccent">#D81B60</color>
     <color name="found">#ABE60F0F</color>
     <color name="normal">@android:color/holo_blue_dark</color>
     <color name="app_yellow">#FFC107</color>
+
+
+
 
 </resources>

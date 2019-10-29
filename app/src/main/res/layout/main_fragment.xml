@@ -16,6 +16,24 @@
     tools:context=".view.MainActivity"
     android:orientation="vertical"
     android:background="@color/app_yellow">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/app_yellow"
+        >
+        <ImageButton
+            android:onClick="@{clickHandlers::onLogOut}"
+            android:id="@+id/on_out"
+            android:layout_marginTop="8dp"
+            android:tooltipText="Logout"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/logout"
+            android:layout_marginBottom="20dp"
+            android:contentDescription="TODO" />
+
+    </androidx.appcompat.widget.Toolbar>
     <LinearLayout
         android:layout_gravity="center"
         android:gravity="center"
@@ -24,6 +42,7 @@
         android:orientation="vertical"
         android:padding="10dp"
         android:layout_marginTop="20dp">
+
 
         <ImageButton
             android:onClick="@{clickHandlers::onStartGetAllFrag}"
@@ -54,12 +73,16 @@
             android:layout_weight="3"
             android:text="دفترچه یادداشت"
             android:layout_marginBottom="50dp"/>
+
         <ImageButton
+            android:onClick="@{clickHandlers::onExit}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/exit"
             android:layout_marginBottom="20dp"
             />
+
+
     </LinearLayout>
 </LinearLayout>
 </layout>

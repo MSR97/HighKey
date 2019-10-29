@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="getSearchViewModel"
+            type="mohammadsajjad.magikey.viewmodel.GetSearchViewModel" />
+        <variable
+            name="clickHandle"
+            type="mohammadsajjad.magikey.view.SearchFragment.SearchFragmentClickHandlers" />
+
+    </data>
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.SearchFragment"
@@ -13,33 +24,47 @@
         android:orientation="vertical">
 
         <ImageButton
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="-110dp"
+            android:background="@drawable/magikey" />
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-50dp"
-            android:background="@drawable/magikey" />
-
+            android:id="@+id/spinner"
+            android:layoutDirection="rtl"
+            />
         <androidx.appcompat.widget.AppCompatEditText
-            android:padding="20dp"
-            android:textSize="40sp"
-            android:textAlignment="center"
-            android:textColor="#1C3AAA"
-            android:shadowColor="#FF0000"
             android:id="@+id/edtSearch"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:inputType="textPersonName"
+            android:layout_height="80dp"
             android:background="#E6AC00"
-            android:focusable="true" />
+            android:focusable="true"
+            android:inputType="textPersonName"
+            android:padding="20dp"
+            android:shadowColor="#FF0000"
+            android:text="@={getSearchViewModel.searchingWords}"
+            android:textAlignment="center"
+            android:textColor="#1C3AAA"
+            android:textSize="30sp" />
+
+
 
         <ImageButton
             android:id="@+id/btnSearch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="254dp"
+            android:layout_height="113dp"
             android:layout_gravity="center"
             android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
             android:background="@drawable/find"
-            android:text="Button"
-            android:layout_marginLeft="5dp" />
+            android:onClick="@{clickHandle::onStartGetSearchResultFragment}"
+            android:text="Button" />
+
+
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -50,5 +75,7 @@
 
 
 
+
     </LinearLayout>
 </LinearLayout>
+</layout>

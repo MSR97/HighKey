@@ -1,6 +1,9 @@
 package mohammadsajjad.magikey.adapters;
 
 import android.content.Context;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,7 +45,7 @@ public class MoviesAllAdapter extends RecyclerView.Adapter<MoviesAllAdapter.Movi
      */
     private Context context;
     private ArrayList<Movies>moviesArrayList;
-
+    String searchingWords;
 
     public MoviesAllAdapter(Context context,ArrayList<Movies> moviesArrayList) {
 
@@ -61,7 +64,7 @@ public class MoviesAllAdapter extends RecyclerView.Adapter<MoviesAllAdapter.Movi
 
     /**
      * Called by RecyclerView to display the data at the specified position. This method should
-     * update the contents of the {@link ViewHolder#itemView} to reflect the item at the given
+     * update the contents of the {@link RecyclerView.ViewHolder#itemView} to reflect the item at the given
      * position.
      * <p>
      * Note that unlike {@link ListView}, RecyclerView will not call this method
@@ -81,8 +84,8 @@ public class MoviesAllAdapter extends RecyclerView.Adapter<MoviesAllAdapter.Movi
      */
     @Override
     public void onBindViewHolder(@NonNull MovieViewHolder holder, int position) {
-        Movies movies=moviesArrayList.get(position);
-        holder.allBinding.setMovies(movies);
+            Movies movies = moviesArrayList.get(position);
+            holder.allBinding.setMovies(movies);
 
     }
 
@@ -124,6 +127,9 @@ public class MoviesAllAdapter extends RecyclerView.Adapter<MoviesAllAdapter.Movi
     public MovieViewHolder(@NonNull AllItemBinding allBinding) {
         super(allBinding.getRoot());
         this.allBinding=allBinding;
+
+
+
         allBinding.getRoot().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -134,9 +140,13 @@ public class MoviesAllAdapter extends RecyclerView.Adapter<MoviesAllAdapter.Movi
                 }
             }
         });
-
-
-
     }
 }
+
+
+
+
+
 }
+
+

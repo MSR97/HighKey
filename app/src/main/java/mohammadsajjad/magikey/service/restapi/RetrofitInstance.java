@@ -7,7 +7,7 @@ public class RetrofitInstance {
     private static Retrofit retrofit;
     private static String BASE_URL="http://provisual.ir/magi/";
 
-    public static GetMovieDataService getService(){
+    public static GetDataService getService(){
         if(retrofit==null){
             retrofit=new Retrofit.Builder()
                     .baseUrl(BASE_URL)
@@ -15,7 +15,7 @@ public class RetrofitInstance {
                     .build();
 
         }
-        return retrofit.create(GetMovieDataService.class);
+        return retrofit.create(GetDataService.class);
 
     }
 

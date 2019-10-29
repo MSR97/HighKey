@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="GetSearchResult"
+            type="mohammadsajjad.magikey.view.GetSearchResultFragment" />
+
+
+    </data>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.GetSearchResultFragment"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.3"
+        android:orientation="horizontal"
+        android:layout_marginTop="2dp">
+
+        <ImageButton
+
+            android:id="@+id/new_searchButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:background="#4688F0"
+            android:src="@drawable/searching_white" />
+
+        <EditText
+            android:id="@+id/new_searchText"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            android:background="#4688F0"
+            android:ems="10"
+            android:hint="کلید واژه مورد نظر را وارد نمایید"
+            android:inputType="textPersonName"
+            android:padding="10dp"
+            android:textColor="#FFFFFF"
+            android:focusedByDefault="false"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lv_for_search"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:padding="5dp" />
+
+
+</LinearLayout>
+</layout>

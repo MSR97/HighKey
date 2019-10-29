@@ -77,7 +77,7 @@ public class GetAllFragment extends Fragment {
     }
 
     void getAllMovies() {
-        getAllViewModel.getLoading().observe((LifecycleOwner) getContext(), isLoading -> {
+        getAllViewModel.getLoading().observe((LifecycleOwner) getContext(), (Boolean isLoading) -> {
             if (isLoading != null && isLoading instanceof Boolean) {
                 loadingView.setVisibility(isLoading ? View.VISIBLE : View.GONE);
                 if (isLoading) {
@@ -88,7 +88,7 @@ public class GetAllFragment extends Fragment {
 
             }
         });
-        if (isLoading != true) {
+        if (!isLoading) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 layout.setBackgroundColor(getContext().getColor(R.color.app_yellow));
             }
@@ -114,7 +114,6 @@ public class GetAllFragment extends Fragment {
         }
         recyclerView.setAdapter(moviesAllAdapter);
         moviesAllAdapter.notifyDataSetChanged();
-
 
     }
 }
